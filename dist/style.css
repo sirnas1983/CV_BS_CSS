@@ -101,6 +101,10 @@
     box-shadow:  0.1rem 0.1rem 0.25rem black;
 }
 
+.modal{
+    color:aliceblue;
+}
+
 #banner {
     border-radius: 1.5rem; 
     max-height:540px; 
@@ -144,19 +148,46 @@ body {
 }
 
 /*             ---------------------------------                  */
-  
-  .sidebar {
+
+#contenedor{
     height: 100%;
-    width: 0;
+    width: 50px;
     position: fixed;
     z-index: 1;
     top: 0;
-    left: 0;
-    background-color: #2125296e;
+    right: 0;
+    background-color: none;
     overflow-x: clip;
     transition: 1s;
+    pointer-events: none;
+}  
+
+  .sidebar {
+    height: 100%;
+    width: 0px;
+    position: fixed;
+    z-index: 1;
+    top: 40px;
+    right: 0;
+    background-color: #212529;
+    overflow-x: inherit;
+    transition: inherit;
     padding-top: 60px;
+    pointer-events: all;
   }
+
+  #boton-sidebar{
+    padding: 1rem;
+    background-color:#212529;
+    color:aliceblue;
+    z-index:5;
+    width: 50px; 
+    position:absolute; 
+    top:50%; 
+    left: 0px;
+    border-radius: 2rem 0 0 2rem;
+    pointer-events: all;
+ }
   
   .sidebar a {
     padding: 8px 8px 8px 32px;
@@ -191,6 +222,6 @@ body {
   
   /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
   @media screen and (max-height: 450px) {
-    .sidebar {padding-top: 15px;}
-    .sidebar a {font-size: 18px;}
+    .sidebar {padding-top: 10px;}
+    .sidebar a {font-size: 14px;}
   }

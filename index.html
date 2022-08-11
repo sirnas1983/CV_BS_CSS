@@ -17,7 +17,7 @@
     <!-- Barra de navegacion superior -->
     <script src="dist/MyScript.js"></script>
 </head>
-<body>
+<body onload="nav()" onscroll="reset()" onwheel="reset()" onkeypress="reset()">
     <!-- Barra de navegacion superior -->
     <div id="navbar" class="navbar navbar-expand-sm bg-dark">
       <ul class="container-fluid ms-2" id="navbar-links-list">
@@ -27,16 +27,10 @@
           <li class="nav-item float-start navbar-images">
             <h4 class="vertical-align text-white">#YoProgramo</h4>
           </li>
-          <li class="nav-item mx-auto">
-          </li>
-          <li class="nav-item">
-            <div id="main" class="float-end">
-              <button class="openbtn fa-white fa-solid fa-bars" onclick="nav()"></button>  
-            </div>
-          </li>
       </ul>
     </div> 
-    <!--PAGINACION EXPERIMENTAL CV. GITHUB-->
+    <!--PAGINACION CV. GITHUB-->
+  <div id="contenedor" class="contenedor-sidebar">
     <div id="mySidebar" class="sidebar">
       <a class="btn m-1" href="#">TOP</a>
       <a class="btn m-1" href="" data-bs-toggle="modal" data-bs-target="#modal-intereses">Intereses</a>
@@ -47,35 +41,10 @@
       <a class="btn m-1" href="#expertize-card">Experiencia laboral</a>
       <a class="btn m-1" href="#course-card">Conocimientos</a>
     </div>
-    <!--FORMULARIO DE LOGIN-->
-    <div class="modal fade" id="login">
-      <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
-        <div class="modal-content">
-            <div class="modal-header bg-primary">
-              <h4 class="modal-title">LOGIN</h4>
-              <button type="button" id="btn-modal" class="btn fa-solid fa-lg fa-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body bg-dark">
-              <form action="#">
-                <div class="mb-3 mt-3">
-                  <label for="email" class="form-label">Nombre de usuario:</label>
-                  <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-                </div>
-                <div class="mb-3">
-                  <label for="pwd" class="form-label">Contraseña:</label>
-                  <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
-                </div>
-                <div class="form-check mb-3">
-                  <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox" name="remember"> Recordar
-                  </label>
-                </div>
-                <button type="submit" class="btn btn-primary">ENVIAR</button>
-              </form>
-            </div>
-        </div>
-      </div>
+    <div id="boton-sidebar">
+      <button id="boton-sidebar-chevron" onclick="nav()" class="btn fa-solid fa-xl fa-chevron-left" style="color:white;"></button>
     </div>
+  </div>
     <!-- Ventana informacion de contacto -->
     <div class="modal fade" id="info-contacto">
       <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
@@ -101,13 +70,12 @@
             <button type="button" id="btn-modal" class="btn fa-solid fa-lg fa-close" data-bs-dismiss="modal"></button>
           </div>
           <div class="modal-body bg-dark">
-          <span class="habilidad">Rock Nacional <button class="habilidad-cierre">x</button></span>
-          <span class="habilidad">Novelas negras <button class="habilidad-cierre">x</button></span>
-          <span class="habilidad">Informatica <button class="habilidad-cierre">x</button></span>
-          <span class="habilidad">Computacion <button class="habilidad-cierre">x</button></span>
-          <span class="habilidad">Noticias <button class="habilidad-cierre">x</button></span>
-          <span class="habilidad">Musica en general <button class="habilidad-cierre">x</button></span>
-          <a href="#" class="btn float-end fa-solid fa-pencil"></a> 
+          <span class="habilidad">Rock Nacional </span>
+          <span class="habilidad">Novelas negras </span>
+          <span class="habilidad">Informatica </span>
+          <span class="habilidad">Computacion </span>
+          <span class="habilidad">Noticias </span>
+          <span class="habilidad">Musica en general </span>
           </div>
         </div>
       </div>
@@ -125,7 +93,6 @@
               <img id="profile-image" src="img/profile-picture.jpg" alt="Foto de perfil">
               <div class="btn">
                 <a href="#" class="btn" style="margin-left: -20px;">
-                  <span class="fa-solid fa-lg fa-pencil"></span>
                 </a>
               </div>
             </div>
@@ -176,8 +143,6 @@
             class="btn fa-solid float-end fa-chevron-up">
           </button>
           <a href="#info-foto" class="btn float-end fa-solid fa-home"></a>
-          <a href="#" class="btn float-end fa-solid fa-pencil">
-          </a>        
         </div>
       </div>
       <div id="acerca-visible" class="row">
@@ -210,25 +175,25 @@
       <hr>
         <div class="row">
           <div class="col-sm-6">
-            <div><span><h4><u>Hard Skills</u></span><button class="btn float-end fa-solid fa-add"></button></div>
+            <div><span><h4><u>Hard Skills</u></span></div>
             <h5>
-              <span class="habilidad">Excel: avanzado <button class="habilidad-cierre">x</button></span>
-              <span class="habilidad">Access: avanzado <button class="habilidad-cierre">x</button></span>
-              <span class="habilidad">Autocad: avanzado <button class="habilidad-cierre">x</button></span>
-              <span class="habilidad">Base de datos: intermedio <button class="habilidad-cierre">x</button></span>
-              <span class="habilidad">Electricidad: avanzado <button class="habilidad-cierre">x</button></span>
-              <span class="habilidad">Automatismo de procesos industriales: avanzado <button class="habilidad-cierre">x</button></span>
+              <span class="habilidad">Excel: avanzado </span>
+              <span class="habilidad">Access: avanzado </span>
+              <span class="habilidad">Autocad: avanzado </span>
+              <span class="habilidad">Base de datos: intermedio </span>
+              <span class="habilidad">Electricidad: avanzado </span>
+              <span class="habilidad">Automatismo: avanzado </span>
             </h5>
           </div>
           <div class="col-sm-6">
-            <div><span><h4><u>Soft Skills</u></span><button class="btn float-end fa-solid fa-add"></button></div>
+            <div><span><h4><u>Soft Skills</u></span></button></div>
             <h5>
-              <span class="habilidad">Liderazgo <button class="habilidad-cierre">x</button></span>
-              <span class="habilidad">Rapido aprendizaje <button class="habilidad-cierre">x</button></span>
-              <span class="habilidad">Sentido del humor <button class="habilidad-cierre">x</button></span>
-              <span class="habilidad">Trabajo en equipo <button class="habilidad-cierre">x</button></span>
-              <span class="habilidad">Responsable <button class="habilidad-cierre">x</button></span>
-              <span class="habilidad">Autodidacta <button class="habilidad-cierre">x</button></span>
+              <span class="habilidad">Liderazgo </span>
+              <span class="habilidad">Rapido aprendizaje </span>
+              <span class="habilidad">Sentido del humor </span>
+              <span class="habilidad">Trabajo en equipo </span>
+              <span class="habilidad">Responsable </span>
+              <span class="habilidad">Autodidacta </span>
             </h5>
           </div>
         </div>
@@ -245,7 +210,6 @@
           class="btn fa-solid float-end fa-chevron-up">
           </button>
           <a href="#info-foto" class="btn float-end fa-solid fa-home"></a>
-          <button class="btn float-end fa-solid fa-add"></button>
         </div>
       </div>
       <div id="estudio-visible">
@@ -269,14 +233,6 @@
             <li><p><b>Link:</b> <a href="http://www.epetrg.edu.ar/" target="_blank">http://www.epetrg.edu.ar/</a></p></li>
           </ul>
         </div>
-        <div class="col-sm-2">           
-          <a href="#" class="float-end ms-3">
-            <span class="fa-solid fa-lg fa-pencil"></span>
-          </a>
-          <a href="#" class="ms-5 float-end">
-            <span class="fa-solid fa-lg fa-trash-can"></span>
-          </a>        
-        </div>
       </div>
       <hr>
       <div class="row lh-1 mt-4">
@@ -298,14 +254,6 @@
             <li><p><b>Link:</b> <a href="https://unlp.edu.ar/" target="_blank">https://unlp.edu.ar/</a></p></li>
           </ul>
         </div>
-        <div class="col-sm-2">           
-          <a href="#" class="ms-3 float-end">
-            <span class="fa-solid fa-lg fa-pencil"></span>
-          </a>
-          <a href="#" class="ms-5 float-end">
-            <span class="fa-solid fa-lg fa-trash-can"></span>
-          </a>        
-        </div>
       </div>
       </div>
     </div>
@@ -316,7 +264,6 @@
         <div class="col-6"><button id="chevron-lenguaje" onclick="desplegar('idiomas-visible','chevron-lenguaje')" 
           class="btn fa-solid float-end fa-chevron-up"></button>
           <a href="#info-foto" class="btn float-end fa-solid fa-home"></a>
-          <button class="btn float-end fa-solid fa-add"></button>
         </div>
       </div>
       <div id="idiomas-visible">
@@ -333,14 +280,6 @@
           </li>
           </ul>
         </div>
-        <div class="col-sm-2">           
-          <a href="#" class="ms-3 float-end">
-            <span class="fa-solid fa-lg fa-pencil"></span>
-          </a>
-          <a href="#" class="ms-5 float-end">
-            <span class="fa-solid fa-lg fa-trash-can"></span>
-          </a>        
-        </div>
       </div>
       <hr>
       <div class="row lh-1 mt-1">
@@ -355,13 +294,6 @@
           </li>
           </ul>
         </div>
-        <div class="col-sm-2">           
-          <a href="#" class="ms-3 float-end"><span class="fa-solid fa-lg fa-pencil"></span>
-          </a>
-          <a href="#" class="ms-5 float-end">
-            <span class="fa-solid fa-lg fa-trash-can"></span>
-          </a>        
-        </div>
       </div>
       </div>
     </div>        
@@ -372,7 +304,6 @@
         <div class="col-6"><button id="chevron-experiencia" onclick="desplegar('experiencia-visible','chevron-experiencia')" 
           class="btn fa-solid float-end fa-chevron-up"></button>
           <a href="#info-foto" class="btn float-end fa-solid fa-home"></a>
-          <button class="btn float-end fa-solid fa-add"></button>
         </div>
       </div>
       <div id="experiencia-visible">
@@ -393,14 +324,6 @@
           </li>
           </ul>
         </div>
-        <div class="col-sm-2">           
-          <a href="#" class="ms-3 float-end">
-            <span class="fa-solid fa-lg fa-pencil"></span>
-          </a>
-          <a href="#" class="ms-5 float-end">
-            <span class="fa-solid fa-lg fa-trash-can"></span>
-          </a>        
-        </div>
       </div>
       <hr>
       <div class="row lh-1 mt-4">
@@ -419,14 +342,6 @@
           </li>
           </ul>
         </div>
-        <div class="col-sm-2">           
-          <a href="#" class="ms-3 float-end">
-            <span class="fa-solid fa-lg fa-pencil"></span>
-          </a>
-          <a href="#" class="ms-5 float-end">
-            <span class="fa-solid fa-lg fa-trash-can"></span>
-          </a>        
-        </div>
       </div>
     </div>
     </div>
@@ -438,7 +353,6 @@
           <button id="chevron-cursos" onclick= "desplegar('cursos-visible','chevron-cursos')" 
           class="btn fa-solid float-end fa-chevron-up"></button>
           <a href="#info-foto" class="btn float-end fa-solid fa-home"></a>
-          <button class="btn float-end fa-solid fa-add"></button>
         </div>
       </div>
       <div id="cursos-visible">
@@ -457,13 +371,6 @@
             </li>
             </ul>
           </div>
-          <div class="col-sm-2">           
-            <a href="#" class="ms-3 float-end">
-              <span class="fa-solid fa-lg fa-pencil"></span>
-            </a>
-            <a href="#" class="ms-5 float-end"><span class="fa-solid fa-lg fa-trash-can"></span>
-            </a>        
-          </div>
         </div>
         <hr>
         <div class="row lh-1 mt-4">
@@ -481,14 +388,6 @@
             </li>
             </ul>
           </div>
-          <div class="col-sm-2">           
-            <a href="#" class="ms-3 float-end">
-              <span class="fa-solid fa-lg fa-pencil"></span>
-            </a>
-            <a href="#" class="ms-5 float-end">
-              <span class="fa-solid fa-lg fa-trash-can"></span>
-            </a>        
-          </div>
         </div>
         <hr>
         <div class="row lh-1 mt-4">
@@ -504,14 +403,6 @@
             <div><p><b>Nivel:</b> Universitario</p></div>
           </li>
           </ul>
-        </div>
-        <div class="col-sm-2">           
-          <a href="#" class="ms-3 float-end">
-            <span class="fa-solid fa-lg fa-pencil"></span>
-          </a>
-          <a href="#" class="ms-5 float-end">
-            <span class="fa-solid fa-lg fa-trash-can"></span>
-          </a>        
         </div>
       </div>
       </div>
